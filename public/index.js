@@ -18,14 +18,14 @@ $(document).ready(function() {
 	myDataRef.on('child_added', function(snapshot) {
 		var task = snapshot.val();
 
-		var new_row = $("<tr></tr>");
+		var new_row = $("<div class='row well'>");
 
-		var category_column = $("<td>"+task.category+"</td>");
-		var owner_column = $("<td>"+task.owner+"</td>");
-		var task_column = $("<td>"+task.task+"</td>");
-		var due_column =$("<td>"+task.due+"<td>");
-		var button_column = $("<td></td>");
-		var button = $('<button>-</button>').click(function () {
+		var category_column = $("<div class='col-md-3'><span class='visible-xs-inline h3'>Category: </span>"+task.category+"</div>");
+		var owner_column = $("<div class='col-md-3'><span class='visible-xs-inline h3'>Owner: </span>"+task.owner+"</div>");
+		var task_column = $("<div class='col-md-3'><span class='visible-xs-inline h3'>Task: </span>"+task.task+"</div>");
+		var due_column =$("<div class='col-md-2'><span class='visible-xs-inline h3'>Due Date: </span>"+task.due+"<div>");
+		var button_column = $("<div class='col-md-1'></div>");
+		var button = $('<button class="btn btn-danger"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>').click(function () {
 			myDataRef.child(snapshot.key()).remove();
 		});
 

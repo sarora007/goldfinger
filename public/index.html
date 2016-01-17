@@ -18,50 +18,41 @@
 </head>
 <body>
 	<div class="container">
-		<table id="table" class="table table-responsive"> 
-			<thead>
-				<tr>
-					<th>Task</th>
-					<th>Category</th>
-					<th>Owner</th>
-					<th>Due Date</th>
-					<th>Add</th>
-				</tr>
-			</thead>
-			<tbody>	
-				<tr>
-					<td>
-						<input id="new_task" type="text" placeholder="New Task" name="new_task">
-					</td>
-					<td>
-						<select id="category">
-							<option value=""></option>	
-							<option value="kitch">Kitchen</option>
-							<option value="bath">Bathroom</option>
-							<option value="living_area">Living Area</option>
-							<option value="bedroom">Bedroom</option>
-							<option value="Shenanigans">Shenanigans</option>
-						</select>
-					</td> 
-					<td>
-						<select id="owner">
-							<option value=""></option>
-							<option value="sai">Sai</option>
-							<option value="sandeep">Sandeep</option>
-
-						</select>
-					</td>
-					<td>
-						<input type="text" placeholder="Due Date" id="datepicker"></input>
-						
-					</td>
-
-					<td> 
-						<button id="button" type="button">+</button>
-					</td>
-				</tr>					
-			</tbody>
-		</table>
+		<div class="row" id="table">
+			<div class="row well">
+				<div class="col-md-3">
+					<h2>Task</h2>
+					<input class="form-control" id="new_task" type="text" placeholder="New Task" name="new_task">
+				</div>
+				<div class="col-md-3">
+					<h2>Category</h2>
+					<select id="category">
+						<option value=""></option>	
+						<option value="kitch">Kitchen</option>
+						<option value="bath">Bathroom</option>
+						<option value="living_area">Living Area</option>
+						<option value="bedroom">Bedroom</option>
+						<option value="Shenanigans">Shenanigans</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<h2>Owner</h2>
+					<select id="owner">
+						<option value=""></option>
+						<option value="sai">Sai</option>
+						<option value="sandeep">Sandeep</option>
+					</select>
+				</div>
+				<div class="col-md-2">
+					<h2>Date</h2>
+					<input class="form-control" type="text" placeholder="Due Date" id="datepicker"></input>
+				</div>
+				<div class="col-md-1">
+					<h2>Add</h2>
+					<button class="btn btn-success" id="button" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+				</div>
+			</div>
+		</div>
 	</div>	
 </bod> 
 </html>
