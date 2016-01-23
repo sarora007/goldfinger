@@ -43,21 +43,25 @@ $(document).ready(function() {
 		var category = $("#category option:selected").text();
 		var owner = $("#owner option:selected").text();
 		var due = $("#datepicker").val();
-		console.log(due);
-		if(category==""||owner =="" || task==""||due==""){
-			alert("Fill in the task details and keep our data clean, NIGGA");
-		}
-		else {
-			myDataRef.push({
+		var datas = {
 				task: task,
 				category: category,
 				owner: owner,
 				due: due
-			});
+			}
+		console.log(due);
+		if(category==""||owner =="" || task==""||due==""){
+			alert("Fill in the task details and keep our data clean");
+		}
+		else {
+			myDataRef.push(datas);
 			$("#new_task").val("");
 			$("#category").val("");
 			$("#owner").val("");
 			$('#datepicker').datepicker('setDate', null);
+			$.post('https://vocal-tracker-119904.appspot.com/',datas, function(response) {
+			console.log ("yo email got sent niggy");// Do something with the request
+		}, 'jsonp');
 		};
 	};
 });
