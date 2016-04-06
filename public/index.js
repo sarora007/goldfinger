@@ -2,6 +2,28 @@ $(document).ready(function() {
 
 	var myDataRef = new Firebase('https://getshitdonenow.firebaseIO.com');
 
+	myDataRef.createUser({
+  		email    : "bobtony@firebase.com",
+  		password : "correcthorsebatterystaple"
+	}, function(error, userData) {
+  	if (error) {
+    	console.log("Error creating user:", error);
+  	} else {
+    	console.log("Successfully created user account with uid:", userData.uid);
+  	}
+	});
+	myDataRef.authWithPassword({
+  		email    : "bobtony@firebase.com",
+  		password : "correcthorsebatterystaple"
+	}, function(error, userData) {
+  	if (error) {
+    	console.log("Login Failed!", error);
+  	} else {
+    	console.log("Authenticated successfully with payload:", authData);
+  	}
+	});
+
+
 	$("#button").click(function(){
 		addTask();
 	});
